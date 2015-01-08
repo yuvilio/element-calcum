@@ -7,13 +7,13 @@ Calculate something about an element and refresh it as browser resizes
 Suppose you want to calculate the widths of divs and paragraphs that have a class with the string 'col' in it. (like 'col-sm-12', 'col-md-3', ...)
 
 ```js
-var elDatum = require('element-datum'); //a module i made!
+var elCalcum = require('element-datum'); //a module i made!
 ```
 
 if you provide it with nothing but the selector it will calculate the offSetWidth by default
 
 ```js
-elDatum({
+elCalcum({
   selector: 'p[class*="col"],div[class*="col"]'
 });
 ```
@@ -44,8 +44,8 @@ p[class*="col"]:after,div[class*="col"]:after {
 ```js
 
 var size = require('element-size');
-var elDatum = require('element-datum');
-elDatum({
+var elCalcum = require('element-datum');
+elCalcum({
   selector: 'p[class*="col"],div[class*="col"]',
   label: 'element-size',// = data-element-size attribute
   unit: 'px', //up to you since it's your calculation

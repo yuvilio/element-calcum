@@ -1,19 +1,16 @@
-//calculate something about elements in a page and disiplayt (like their widths)
+//Calculate something about elements in a page and disiplayt (like their widths)
 var sliced = require('sliced')
 
 
-var calcDatum = function(opts){
+var calcum = function(opts){
   //grab all the columns ( <p> and <div> elements with some class="col-..." in them)
   sliced(document.querySelectorAll(opts.selector)).forEach(function(element){
-    // var elSize = size(element); //the actual element is not the span
-    // element.setAttribute('data-'+ opts.label, elSize[0]+opts.units );
-    // console.log(opts.labelVisible)
+
     element.setAttribute(
       'data-'+ opts.label,
       (opts.labelVisible ?  opts.label + ':' : '') //show the label if they want to
       + opts.callback(element)+opts.units
     );
-    // element.textContent = 'width: ' + elSize[0] + 'px';
   });
 };
 
@@ -34,9 +31,9 @@ module.exports = function(opts){
   // console.log(options)
 
 
-  calcDatum(options); //display first time (since this is called within a dom load)
+  calcum(options); //display first time (since this is called within a dom load)
   window.addEventListener('resize', function(){ //update when data changes
-    calcDatum(options);
+    calcum(options);
   });
 
 }

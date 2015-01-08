@@ -1,4 +1,4 @@
-# element-datum
+# element-calcum
 Calculate something about an element and refresh it as browser resizes
 
 
@@ -7,7 +7,7 @@ Calculate something about an element and refresh it as browser resizes
 Suppose you want to calculate the widths of divs and paragraphs that have a class with the string 'col' in it. (like 'col-sm-12', 'col-md-3', ...)
 
 ```js
-var elCalcum = require('element-datum'); //a module i made!
+var elCalcum = require('element-calcum'); //a module i made!
 ```
 
 if you provide it with nothing but the selector it will calculate the offSetWidth by default
@@ -44,13 +44,13 @@ p[class*="col"]:after,div[class*="col"]:after {
 ```js
 
 var size = require('element-size');
-var elCalcum = require('element-datum');
+var elCalcum = require('element-calcum');
 elCalcum({
   selector: 'p[class*="col"],div[class*="col"]',
   label: 'element-size',// = data-element-size attribute
   unit: 'px', //up to you since it's your calculation
   labelVisible: 0, //hide the label text from the result
-  callback: function(el){ //the actual calculation of the datum
+  callback: function(el){ //the actual calculation of the calcum
     return size(el)[0];
   }
 });

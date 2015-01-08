@@ -1,0 +1,14 @@
+{
+  "name": "element-datum",
+  "version": "0.5.0",
+  "description": "Calculate something about elements you select (like their widths for example) and record it as data-attribute (displayable via css that way).",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yuvilio",
+  "license": "MIT",
+  "dependencies": {
+    "sliced": "0.0.5"
+  }
+}

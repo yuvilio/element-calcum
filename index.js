@@ -25,14 +25,19 @@ module.exports = function(opts){
 
   options.labelVisible = opts.labelVisible && 1; //default to label being visible unless specified
   options.units = opts.units || 'px'; //default to 'px' being the unit unless specified (this is up to the client. the library knows nothing)
+
   options.callback = opts.callback || function(el){
     return el.offsetWidth;
   }
-  // console.log(options)
+
+  //what event will trigure a recalculation? by default it's a 'resize' event on window
+  options.eventOnElem = opts.eventOnElem || window;
+  options.event = opts.event || 'resize';
+
 
 
   calcum(options); //display first time (since this is called within a dom load)
-  window.addEventListener('resize', function(){ //update when data changes
+  options.eventOnElem.addEventListener(options.event, function(){ //update when data changes
     calcum(options);
   });
 

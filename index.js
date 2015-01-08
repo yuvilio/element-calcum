@@ -1,8 +1,8 @@
 //calculate something about elements in a page and disiplayt (like their widths)
 var sliced = require('sliced')
 
-//setting data-width attributes (displayable via css)
-var displayColSizes = function(opts){
+
+var calcDatum = function(opts){
   //grab all the columns ( <p> and <div> elements with some class="col-..." in them)
   sliced(document.querySelectorAll(opts.selector)).forEach(function(element){
     // var elSize = size(element); //the actual element is not the span
@@ -34,34 +34,9 @@ module.exports = function(opts){
   // console.log(options)
 
 
-  displayColSizes(options); //display when the dom loads
-  window.addEventListener('resize', function(){
-    displayColSizes(options);
+  calcDatum(options); //display first time (since this is called within a dom load)
+  window.addEventListener('resize', function(){ //update when data changes
+    calcDatum(options);
   });
 
 }
-
-//usage:
-// var colwidths = require('colwidths');
-// window.addEventListener('load', function(){
-//
-//   colwidths();
-//
-//
-// }); //on load
-
-
-//example styles for the cols
-//let's render the widths of the columns as css content
-// p[class*="col"],div[class*="col"] {
-//   &:after {
-//     display: table;
-//     position: absolute;
-//     bottom: 20px;
-//     background-color: salmon;
-//     color: white;
-//     padding: 3px 2px;
-//     right: 0;
-//     content: attr(data-width); /*use the 'data-[label]' for example 'data-width' if that's what you called it */
-//   }
-// }

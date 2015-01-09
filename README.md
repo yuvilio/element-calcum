@@ -36,7 +36,7 @@ p[class*="col"]:after,div[class*="col"]:after { /* this typically matches the 's
 ```
 
 
-## Example using another library for the calculatio
+## Example using another library for the calculation
 
 Here's an example calculating widths of all paragraphs and divs with 'col' using the [element-size](https://github.com/hughsk/element-size) module.
 
@@ -59,7 +59,7 @@ elCalcum({
 
 ## Example of using another event to trigger the recalculation besides the default 'resize' on window that is used
 
-If you want another event (like clicking a button,  ),  use ```eventOnElem``` for the element the event is happening on (default is ```window```) and ```event``` for the event name (default is 'resize'). Here is an example of triggerinng the recalculation of the element sizes by clicking a button that
+If you want another event (like clicking a button,  ),  use ```eventOnElem``` for the element the event is happening on (default is ```window```) and ```event``` for the event name (default is 'resize'). Here is an example of triggerinng the recalculation of the element sizes by clicking a button that is in the markup:
 
 ```html
 <button class="refresh">Refresh calculation!</button>
@@ -77,5 +77,51 @@ elCalcum({
     return size(el)[0];
   }
 });
+
+```
+
+## using an input to control it
+
+An example of a range slider to control the height. Using the [dom-style](https://github.com/npm-dom/dom-style) for convenience.
+
+```html
+
+<div class="som-div">...</div>
+
+
+<div class="slider">
+  <label for=height-slider>adjust height</label>
+  <input type=range min=100 max=300 value=100 class="height-slider" id=height-slider step=1 >
+  <span></span>
+</div>
+```
+
+```js
+elCalcum({
+  selector: '.container-flex-direction-column [class*="box"], .container-flex-direction-column-no-height  [class*="box"] ',
+  label: 'height', //data-height
+  unit: 'px',
+  labelVisible: 1,
+
+  //recalculate when the range slider is adjusted
+  eventOnElem: document.querySelector('.height-slider'),
+  event: 'change',
+
+  callback: function(el){
+    return size(el)[1];
+  }
+});
+
+//when the range slider is adjusted, adjust the css height of some-div
+document.querySelector('.height-slider').addEventListener('change', function(e){
+  var slider = e.target;
+  slider.nextElementSibling.textContent = slider.value + ' px';
+
+
+  style(document.querySelector('.some-div'), {
+    'height': slider.value + 'px'
+  })
+
+})
 
 ```

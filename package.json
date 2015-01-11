@@ -19,7 +19,8 @@
     "browserify-standalone": "^0.3.0",
     "dom-style": "0.0.3",
     "gulp": "^3.8.10",
-    "gulp-gh-pages": "^0.4.0"
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-release-tasks": "0.0.3"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,5 @@
     "css",
     "debug",
     "responsive"
-
   ]
 }

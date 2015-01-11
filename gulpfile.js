@@ -11,6 +11,10 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var deployGh = require('gulp-gh-pages');
 
+
+// pass along gulp reference to have tasks imported
+require('gulp-release-tasks')(gulp);
+
 //html generation from swig templates
 var swigopts  = {
   defaults: {

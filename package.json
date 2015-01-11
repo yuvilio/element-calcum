@@ -16,11 +16,18 @@
     "sliced": "0.0.5"
   },
   "devDependencies": {
+    "browser-sync": "^1.9.0",
+    "browserify": "^8.1.0",
     "browserify-standalone": "^0.3.0",
     "dom-style": "0.0.3",
     "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
     "gulp-gh-pages": "^0.4.0",
-    "gulp-release-tasks": "0.0.3"
+    "gulp-release-tasks": "0.0.3",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-swig": "^0.7.4",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.2.1"
   },
   "repository": {
     "type": "git",

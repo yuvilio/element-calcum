@@ -12,6 +12,7 @@
     "sliced": "0.0.5"
   },
   "devDependencies": {
+    "dom-style": "0.0.3",
     "gulp": "^3.8.10",
     "gulp-gh-pages": "^0.4.0"
   }

@@ -2,13 +2,29 @@
 Calculate something about an element and refresh it as browser resizes
 
 
+
+
 ## Example usage
+
+If using npm based system,
+
+```bash
+npm install element-calcum
+```
+
+```js
+var elCalcum = require('element-calcum');
+```
+
+Altenately for a standalone window global, download the [latest element-calcum.js build here](https://yuvilio.github.io/element-calcum/)and include it in  your script to have a global window.elCalcum available.
+
+```html
+<script src="element-calcum.js"></script>
+
+```
 
 Suppose you want to calculate the widths of divs and paragraphs that have a class with the string 'col' in it. (like 'col-sm-12', 'col-md-3', ...)
 
-```js
-var elCalcum = require('element-calcum'); //a module i made!
-```
 
 if you provide it with nothing but the selector it will calculate the offSetWidth by default
 
@@ -38,7 +54,7 @@ p[class*="col"]:after,div[class*="col"]:after { /* this typically matches the 's
 
 ## Example using another library for the calculation
 
-Here's an example calculating widths of all paragraphs and divs with 'col' using the [element-size](https://github.com/hughsk/element-size) module.
+Here's an example calculating widths of all paragraphs and divs with 'col' element.offsetWidth.
 
 ```js
 
@@ -50,7 +66,7 @@ elCalcum({
   unit: 'px', //up to you since it's your calculation
   labelVisible: 0, //hide the label text from the result
   callback: function(el){ //the actual calculation of the calcum
-    return size(el)[0];
+    return el.offsetWidth;
   }
 });
 
@@ -59,7 +75,7 @@ elCalcum({
 
 ## Example of using another event to trigger the recalculation besides the default 'resize' on window that is used
 
-If you want another event (like clicking a button,  ),  use ```eventOnElem``` for the element the event is happening on (default is ```window```) and ```event``` for the event name (default is 'resize'). Here is an example of triggerinng the recalculation of the element sizes by clicking a button that is in the markup:
+If you want another event (like clicking a button,  ),  use ```eventOnElem``` for the element the event is happening on (default is ```window```) and ```event``` for the event name (default is 'resize'). Here is an example of triggerinng the recalculation of the element sizes by clicking a button that is in the markup. This time using the  [element-size](https://github.com/hughsk/element-size) :
 
 ```html
 <button class="refresh">Refresh calculation!</button>
@@ -124,4 +140,14 @@ document.querySelector('.height-slider').addEventListener('change', function(e){
 
 })
 
+```
+
+
+Building the standalone global:
+
+```bash
+git clone https://github.com/yuvilio/element-calcum
+cd element-calcum
+npm install
+npm run build-standalone-global
 ```

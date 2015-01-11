@@ -1,4 +1,7 @@
-
+body {
+  background: aliceblue;
+  color: darkslategray;
+}
 //border-box as the box-sizing model
 * {
   box-sizing: border-box;
@@ -21,6 +24,10 @@ img, video {
   margin: 10px 0;
 }
 
+p, .marked {
+  font-size: 1.8rem;
+}
+
 //some colored boxes (.box-1, .box-2, ... .box-12) //feel free to override
 $grid-colors: fuchsia, green, yellow, teal, orange, beige, coral, cornflowerblue, darkkhaki, darkolivegreen, darkred, deeppink;
 $max-grid-cols: 12;
@@ -32,6 +39,6 @@ $max-grid-cols: 12;
   .box-#{$i} {
     background-color: #{nth($grid-colors, $i)} ;
     height: 100px;
-    color: white;    
+    color: white;
   }
 }

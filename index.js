@@ -1,14 +1,14 @@
-//Calculate something about elements in a page and disiplayt (like their widths)
-var sliced = require('sliced')
+var sliced = require('sliced');
 
-
+//carry out the calculation provided for each of the elements specified
+//store results in data attribute
 var calcum = function(opts){
-  //grab all the columns ( <p> and <div> elements with some class="col-..." in them)
+
   sliced(document.querySelectorAll(opts.selector)).forEach(function(element){
 
     element.setAttribute(
       'data-'+ opts.label,
-      (opts.labelVisible ?  opts.label + ':' : '') //show the label if they want to
+      (opts.labelVisible ?  opts.label + ':' : '')
       + opts.callback(element)+opts.units
     );
   });

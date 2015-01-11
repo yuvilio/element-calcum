@@ -1,6 +1,6 @@
 {
   "name": "element-calcum",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Calculate some data item about elements you select (like their widths for example) and record it as data-attribute (displayable via css that way).",
   "main": "./index.js",
   "scripts": {

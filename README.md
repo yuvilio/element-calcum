@@ -16,7 +16,7 @@ npm install element-calcum
 var elCalcum = require('element-calcum');
 ```
 
-Altenately for a standalone window global, download the [latest element-calcum.js build here](https://yuvilio.github.io/element-calcum/)and include it in  your script to have a global window.elCalcum available.
+Altenately for a standalone window global, download the [latest element-calcum.js build here](http://yuvilio.github.io/element-calcum/build/element-calcum.js)and include it in  your script to have a global window.elCalcum available.
 
 ```html
 <script src="element-calcum.js"></script>

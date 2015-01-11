@@ -4,10 +4,13 @@
   "description": "Calculate some data item about elements you select (like their widths for example) and record it as data-attribute (displayable via css that way).",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: TODO tests\" && exit 1",
     "build-standalone-global": "./build-standalone-global.sh"
   },
-  "author": "yuvilio",
+  "author": {
+    "name": "Yuval Maman",
+    "url": "http://github.com/yuvilio"
+  },
   "license": "MIT",
   "dependencies": {
     "sliced": "0.0.5"
@@ -17,5 +20,16 @@
     "dom-style": "0.0.3",
     "gulp": "^3.8.10",
     "gulp-gh-pages": "^0.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuvilio/element-calcum.git"
+  },
+  "keywords": [
+    "browser",
+    "css",
+    "debug",
+    "responsive"
+
+  ]
 }

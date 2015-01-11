@@ -96,6 +96,10 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .tex .hljs-formula {
   background: #073642; }
 
+body {
+  background: aliceblue;
+  color: darkslategray; }
+
 * {
   box-sizing: border-box; }
 
@@ -105,6 +109,9 @@ img, video {
 
 .marked {
   margin: 10px 0; }
+
+p, .marked {
+  font-size: 1.8rem; }
 
 .box-1 {
   background-color: fuchsia;

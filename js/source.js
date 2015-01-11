@@ -79,17 +79,17 @@ window.addEventListener('load', function(){
 }); //on load
 
 },{"../../index.js":"/home/yuvilio/apps/original_node_modules/element-calcum/index.js","dom-style":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/dom-style/index.js","element-size":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/element-size/index.js","highlight-redux":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/highlight-redux/lib/index.js","highlight-redux/lib/languages/css":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/highlight-redux/lib/languages/css.js","highlight-redux/lib/languages/javascript":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/highlight-redux/lib/languages/javascript.js","marked":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/marked/lib/marked.js","sliced":"/home/yuvilio/apps/original_node_modules/element-calcum/node_modules/sliced/index.js"}],"/home/yuvilio/apps/original_node_modules/element-calcum/index.js":[function(require,module,exports){
-//Calculate something about elements in a page and disiplayt (like their widths)
-var sliced = require('sliced')
+var sliced = require('sliced');
 
-
+//carry out the calculation provided for each of the elements specified
+//store results in data attribute
 var calcum = function(opts){
-  //grab all the columns ( <p> and <div> elements with some class="col-..." in them)
+
   sliced(document.querySelectorAll(opts.selector)).forEach(function(element){
 
     element.setAttribute(
       'data-'+ opts.label,
-      (opts.labelVisible ?  opts.label + ':' : '') //show the label if they want to
+      (opts.labelVisible ?  opts.label + ':' : '')
       + opts.callback(element)+opts.units
     );
   });

@@ -32,7 +32,7 @@
       <div class="box-5 col-sm-6 col-md-8 col-lg-3">col-sm-6 col-md-8 col-lg-3</div>
     </div>
 
-<div class="marked">## Ex. 2: Height and slider adjustments</div>
+<div class="marked">## Ex. 2: Recalculating off of other events (like a range slider input)</div>
 
 <div class="marked">Since you control the calculation made on the the element, it can be whatever you want to explore. Here's an example exploring the flexbox proportions and this time measuring height. Let's also demonstrate manual adjustment by throwing in a range slider with a 'change' listener to adjust the height and have element-calcum recalculate the approximate heights. You might have to double adjust the slider to see the new calculation.</div>
 
@@ -60,6 +60,19 @@
     <option>300</option>
   </datalist>
 </div>
+
+
+<div class="marked">## Ex. 3: Multiple calcs on the same elements</div>
+
+<div class="marked">Simply run as many calculations on the elements. Each will generate it's own data attribute. You can them concatenate them in the css for one label: </div>
+
+<div class="ex-multiple-calcum">
+  <div class="box-4">flex 1</div>
+  <div class="box-5">flex 2</div>
+  <div class="box-7">flex 1</div>
+</div>
+
+
 
 <div class="marked">Want to use the element inspector to adjust the style and see the change? Have a look at [element-calcum-style](https://github.com/yuvilio/element-calcum-style)</div>
 

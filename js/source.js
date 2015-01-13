@@ -74,6 +74,29 @@ window.addEventListener('load', function(){
   });
 
 
+  //ex-multiple-calcum
+  elCalcum({
+    selector: '.ex-multiple-calcum [class*="box"]',
+    label: 'width',
+    unit: 'px',
+    labelVisible: 1,
+    callback: function(el){ //calculate the width of each element
+      return size(el)[0];
+    }
+  });
+
+  elCalcum({
+    selector: '.ex-multiple-calcum [class*="box"]',
+    label: 'height', //data-height
+    unit: 'px',
+    labelVisible: 1,
+    
+
+    callback: function(el){ //calculate the height of each element
+      return size(el)[1];
+    }
+  });
+
 
 
 }); //on load

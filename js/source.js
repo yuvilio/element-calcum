@@ -36,7 +36,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-width [class*="box"]',
     label: 'width',
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
     callback: function(el){ //calculate the width of each element
       return size(el)[0];
@@ -47,7 +47,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-height-flex [class*="box"]',
     label: 'height', //data-height
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
 
 
@@ -78,7 +78,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-multiple-calcum [class*="box"]',
     label: 'width',
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
     callback: function(el){ //calculate the width of each element
       return size(el)[0];
@@ -88,12 +88,25 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-multiple-calcum [class*="box"]',
     label: 'height', //data-height
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
-    
+
 
     callback: function(el){ //calculate the height of each element
       return size(el)[1];
+    }
+  });
+
+
+  //ex-ratios
+
+  elCalcum({
+    selector: '.ex-ratio [class*="col"]',
+    label: 'width-height-ratio', //data-width
+    units: '', //it's a unitless ratio
+    labelVisible: 1,
+    callback: function(el){
+      return (size(el)[0] / size(el)[1]).toFixed(1);
     }
   });
 
@@ -112,8 +125,8 @@ var calcum = function(opts){
 
     element.setAttribute(
       'data-'+ opts.label,
-      (opts.labelVisible ?  opts.label + ':' : '')
-      + opts.callback(element)+opts.units
+      (opts.labelVisible ?  opts.label + ':' : '') + //optional label in the value
+      opts.callback(element)+opts.units
     );
   });
 };
@@ -128,7 +141,7 @@ module.exports = function(opts){
   options.label = opts.label ||  'offsetWidth';
 
   options.labelVisible = opts.labelVisible && 1; //default to label being visible unless specified
-  options.units = opts.units || 'px'; //default to 'px' being the unit unless specified (this is up to the client. the library knows nothing)
+  options.units = opts.units || ''; //default to no units '' being the unit unless specified (this is up to the client. the library knows nothing)
 
   options.callback = opts.callback || function(el){
     return el.offsetWidth;

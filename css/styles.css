@@ -187,6 +187,8 @@ p, .marked {
     content: attr(data-height); }
   .ex-multiple-calcum [class*="box"]:before {
     content: attr(data-width) " " attr(data-height); }
+  .ex-ratio [class*="box"]:before {
+    content: attr(data-width-height-ratio); }
 
 .ex-height-flex, .ex-multiple-calcum {
   background-color: #555;
@@ -208,3 +210,13 @@ p, .marked {
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2; }
+
+.ex-ratio {
+  height: 150px; }
+  .ex-ratio > div {
+    height: 100%; }
+  .ex-ratio .bg-image {
+    background-image: url(http://placehold.it/300x150);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; }

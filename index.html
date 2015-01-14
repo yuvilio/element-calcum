@@ -73,6 +73,15 @@
 </div>
 
 
+<div class="marked">## Ex. 4: Ratios</div>
+
+<div class="marked">Sometimes when implementing a static design, it doesn't act as we'd like in some breakpoint. Height to width ratios we want to maintain get out of wack and things misalign. We might want to insert media queries or adjust the grid we're using to fix them. Here is an example of calculating ratios revealing a background image going out of the ratio intended (say 2/1 for width to height). We know that as we resize, the ratios are adjusted and we should fix it when they are. This can be handy however you choose to solve the problem</div>
+
+<div class="row ex-ratio">
+  <div class="box-4 bg-image col-sm-6">col-sm-6 col-md-4 col-lg-9</div>
+  <div class="box-5 col-sm-6 col-sm-6">col-sm-6 col-md-8 col-lg-3</div>
+</div>
+
 
 <div class="marked">Want to use the element inspector to adjust the style and see the change? Have a look at [element-calcum-style](https://github.com/yuvilio/element-calcum-style)</div>
 

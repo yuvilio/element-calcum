@@ -24,6 +24,10 @@
     content: attr(data-width) " " attr(data-height);
   }
 
+  .ex-ratio & {
+    content: attr(data-width-height-ratio);
+  }
+
   }
 }
 
@@ -46,6 +50,22 @@
     &:nth-child(2){
       flex: 2;
     }
+
+  }
+}
+
+.ex-ratio {
+  height: 150px;
+  &>div {
+    height: 100%;
+  }
+
+  .bg-image {
+    background-image: url(http://placehold.it/300x150);
+    background-repeat: no-repeat;
+
+    background-position: center center;
+    background-size: 100% auto;
 
   }
 }

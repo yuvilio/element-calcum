@@ -63,7 +63,7 @@ var elCalcum = require('element-calcum');
 elCalcum({
   selector: 'p[class*="col"],div[class*="col"]',
   label: 'element-size',// = data-element-size attribute
-  unit: 'px', //up to you since it's your calculation
+  units: 'px', //up to you to decide what the units are (if any) since it's your calculation
   labelVisible: 0, //hide the label text from the result
   callback: function(el){ //the actual calculation of the calcum
     return el.offsetWidth;
@@ -85,7 +85,7 @@ If you want another event (like clicking a button,  ),  use ```eventOnElem``` fo
 elCalcum({
   selector: '[class*="container"]>[class*="box"]',
   label: 'element-size',
-  unit: 'px',
+  units: 'px',
   labelVisible: 0,
   eventOnElem: document.querySelector('button[class="refresh"]'),
   event: 'click',
@@ -116,7 +116,7 @@ An example of a range slider to control the height. Using the [dom-style](https:
 elCalcum({
   selector: '.container-flex-direction-column [class*="box"], .container-flex-direction-column-no-height  [class*="box"] ',
   label: 'height', //data-height
-  unit: 'px',
+  units: 'px',
   labelVisible: 1,
 
   //recalculate when the range slider is adjusted

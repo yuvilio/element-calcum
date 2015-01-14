@@ -35,7 +35,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-width [class*="box"]',
     label: 'width',
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
     callback: function(el){ //calculate the width of each element
       return size(el)[0];
@@ -46,7 +46,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-height-flex [class*="box"]',
     label: 'height', //data-height
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
 
 
@@ -77,7 +77,7 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-multiple-calcum [class*="box"]',
     label: 'width',
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
     callback: function(el){ //calculate the width of each element
       return size(el)[0];
@@ -87,12 +87,25 @@ window.addEventListener('load', function(){
   elCalcum({
     selector: '.ex-multiple-calcum [class*="box"]',
     label: 'height', //data-height
-    unit: 'px',
+    units: 'px',
     labelVisible: 1,
-    
+
 
     callback: function(el){ //calculate the height of each element
       return size(el)[1];
+    }
+  });
+
+
+  //ex-ratios
+
+  elCalcum({
+    selector: '.ex-ratio [class*="col"]',
+    label: 'width-height-ratio', //data-width
+    units: '', //it's a unitless ratio
+    labelVisible: 1,
+    callback: function(el){
+      return (size(el)[0] / size(el)[1]).toFixed(1);
     }
   });
 

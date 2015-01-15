@@ -42,13 +42,27 @@ The power comes in giving it a callback to do your own calculation
 ```css
 
 p[class*="col"]:after,div[class*="col"]:after { /* this typically matches the 'selector' value you passed into the js */
+
+  content: attr(data-offsetWidth); /*use the label you gave. 'data-[label]'  */
+
+  /* arbitrary label styles*/
   background-color: salmon;
   color: white;
   padding: 3px 2px;
   right: 0;
-  content: attr(data-offsetWidth); /*use the 'data-[label]' */
+
  }
 
+```
+
+If your label is affecting height/width or some other layout value, you might want to use absolute positioning so that it doesn't factor in. for example
+```css
+
+[class*="col"]:before {
+  ...
+  position: absolute;
+  left: 0;
+}
 ```
 
 

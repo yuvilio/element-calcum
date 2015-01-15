@@ -28,6 +28,14 @@
     content: attr(data-width-height-ratio);
   }
 
+  .ex-offset-align & {
+    content:  attr(data-offset);
+  }
+
+  .ex-relative-offset & {
+    content:  attr(data-relative-offset);
+  }
+
   }
 }
 
@@ -67,5 +75,18 @@
     background-position: center center;
     background-size: 100% auto;
 
+  }
+}
+
+
+
+.ex-relative-offset {
+  padding-top: 60px;
+  padding-left: 40px;
+  border: 1px solid slateblue;
+
+  [class*="box"]{
+    width: 200px;
+    height: 100px;
   }
 }

@@ -189,6 +189,10 @@ p, .marked {
     content: attr(data-width) " " attr(data-height); }
   .ex-ratio [class*="box"]:before {
     content: attr(data-width-height-ratio); }
+  .ex-offset-align [class*="box"]:before {
+    content: attr(data-offset); }
+  .ex-relative-offset [class*="box"]:before {
+    content: attr(data-relative-offset); }
 
 .ex-height-flex, .ex-multiple-calcum {
   background-color: #555;
@@ -220,3 +224,11 @@ p, .marked {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% auto; }
+
+.ex-relative-offset {
+  padding-top: 60px;
+  padding-left: 40px;
+  border: 1px solid slateblue; }
+  .ex-relative-offset [class*="box"] {
+    width: 200px;
+    height: 100px; }

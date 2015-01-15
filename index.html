@@ -75,11 +75,40 @@
 
 <div class="marked">## Ex. 4: Ratios</div>
 
-<div class="marked">Sometimes when implementing a static design, it doesn't act as we'd like in some breakpoint. Height to width ratios we want to maintain get out of wack and things misalign. We might want to insert media queries or adjust the grid we're using to fix them. Here is an example of calculating ratios revealing a background image going out of the ratio intended (say 2/1 for width to height). We know that as we resize, the ratios are adjusted and we should fix it when they are. This can be handy however you choose to solve the problem</div>
+<div class="marked">A lot of implementing a responsive layout per some design is maintaining alignments and ratios (width/height, ...) for various viewport widths. Here is an example of a bootstrap grid calculating width/height ratios revealing a background image going out of the ratio intended (say 2/1 for width to height). We know that as we resize, the ratios are adjusted and we should fix it when they are. This can be handy however you choose to solve the problem</div>
 
 <div class="row ex-ratio">
   <div class="box-4 bg-image col-sm-6">col-sm-6 col-md-4 col-lg-9</div>
   <div class="box-5 col-sm-6 col-sm-6">col-sm-6 col-md-8 col-lg-3</div>
+</div>
+
+<div class="marked">## Ex. 5a: Offset (position) </div>
+
+<div class="marked">Offsets, can help see if things are aligned. Here's a pair of rows that align at small breakpoint but whose second columns mis-align in medium breakpoint. The offset calculation is presented as (top, left)</div>
+
+<div class="ex-offset-align">
+
+  <div class="row">
+    <div class="box-4 col-sm-3 col-md-4">col-sm-3 col-md-4</div>
+    <div class="box-5 col-sm-9 col-md-8">col-sm-9 col-md-8</div>
+  </div>
+
+  <div class="row">
+    <div class="box-7 col-sm-3 col-md-7">col-sm-3 col-md-7</div>
+    <div class="box-8 col-sm-9 col-md-5">col-sm-9 col-md-5</div>
+  </div>
+
+
+</div>
+
+<div class="marked">##. Ex 5b: Relative offsets:</div>
+
+<div class="marked">With slight adjustment we can see offsets relative to their parent. </div>
+
+<div class="ex-relative-offset">
+
+  <div class="box-9"></div>
+
 </div>
 
 

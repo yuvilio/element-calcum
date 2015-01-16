@@ -9,8 +9,8 @@ var calcum = function(opts){
 
     element.setAttribute(
       'data-'+ opts.label,
-      (opts.labelVisible ?  opts.label + ':' : '')
-      + opts.callback(element)+opts.units
+      (opts.labelVisible ?  opts.label + ':' : '') + //optional label in the value
+      opts.callback(element)+opts.units
     );
   });
 };
@@ -25,7 +25,7 @@ module.exports = function(opts){
   options.label = opts.label ||  'offsetWidth';
 
   options.labelVisible = opts.labelVisible && 1; //default to label being visible unless specified
-  options.units = opts.units || 'px'; //default to 'px' being the unit unless specified (this is up to the client. the library knows nothing)
+  options.units = opts.units || ''; //default to no units '' being the unit unless specified (this is up to the client. the library knows nothing)
 
   options.callback = opts.callback || function(el){
     return el.offsetWidth;

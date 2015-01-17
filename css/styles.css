@@ -194,7 +194,38 @@ p, .marked {
   .ex-relative-offset [class*="box"]:before {
     content: attr(data-relative-offset); }
 
-.ex-height-flex, .ex-multiple-calcum {
+/* alternate styles for the data attributes*/
+.ex-multiple-calc [class*="box"]:before {
+  display: table;
+  background-color: salmon;
+  color: white;
+  padding: 3px 2px;
+  position: absolute;
+  right: initial;
+  bottom: initial;
+  font-size: 12px;
+  border: 1px solid slateblue;
+  z-index: 1;
+  white-space: pre;
+  /* multi-line css content with \a for newline */
+  content: attr(data-width) "\a" attr(data-height); }
+
+.ex-multiple-calc {
+  border: 1px solid slateblue; }
+  .ex-multiple-calc:before {
+    display: table;
+    background-color: slateblue;
+    color: white;
+    padding: 3px 2px;
+    position: absolute;
+    font-size: 12px;
+    border: 1px solid slateblue;
+    right: 0;
+    z-index: 10;
+    white-space: pre;
+    content: attr(data-container-width) "\a" attr(data-container-height); }
+
+.ex-height-flex {
   background-color: #555;
   width: 100%;
   margin: 0;
@@ -206,14 +237,35 @@ p, .marked {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column; }
-  .ex-height-flex [class*="box-"]:first-child, .ex-height-flex [class*="box-"]:last-child, .ex-multiple-calcum [class*="box-"]:first-child, .ex-multiple-calcum [class*="box-"]:last-child {
+  .ex-height-flex [class*="box-"]:first-child, .ex-height-flex [class*="box-"]:last-child {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1; }
-  .ex-height-flex [class*="box-"]:nth-child(2), .ex-multiple-calcum [class*="box-"]:nth-child(2) {
+  .ex-height-flex [class*="box-"]:nth-child(2) {
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2; }
+
+.ex-multiple-calc {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .ex-multiple-calc [class*="box"] {
+    height: 100px;
+    float: left;
+    margin: 5px;
+    -webkit-flex-basis: 100px;
+    -ms-flex-preferred-size: 100px;
+    flex-basis: 100px;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1; }
 
 .ex-ratio {
   height: 150px; }

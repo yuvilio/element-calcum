@@ -39,7 +39,53 @@
   }
 }
 
-.ex-height-flex, .ex-multiple-calcum {
+/* alternate styles for the data attributes*/
+
+.ex-multiple-calc [class*="box"] {
+  &:before {
+
+
+
+    display: table;
+    background-color: salmon;
+    color: white;
+    padding: 3px 2px;
+    position: absolute;
+    right: initial;
+    bottom: initial;
+
+    font-size: 12px;
+    border: 1px solid slateblue;
+    z-index: 1;
+
+
+    white-space: pre; /* multi-line css content with \a for newline */
+    content: attr(data-width) "\a " attr(data-height);
+  }
+}
+
+.ex-multiple-calc {
+  border: 1px solid slateblue;
+
+  &:before {
+    display: table;
+    background-color: slateblue;
+    color: white;
+    padding: 3px 2px;
+    position: absolute;
+    font-size: 12px;
+    border: 1px solid slateblue;
+    right: 0;
+    z-index: 10;
+
+    white-space: pre;
+    content: attr(data-container-width) "\a " attr(data-container-height);
+  }
+}
+
+
+
+.ex-height-flex {
   background-color: #555;
   width: 100%;
   margin: 0;
@@ -58,6 +104,27 @@
     &:nth-child(2){
       flex: 2;
     }
+
+  }
+}
+
+.ex-multiple-calc  {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  [class*="box"] {
+
+    height: 100px;
+
+    float: left; //how often to move to the next line
+
+    margin: 5px; //space between elements
+
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
 
   }
 }

@@ -76,27 +76,47 @@ window.addEventListener('load', function(){
 
   //ex-multiple-calcum
   elCalcum({
-    selector: '.ex-multiple-calcum [class*="box"]',
+    selector: '.ex-multiple-calc [class*="box"]',
     label: 'width',
     units: 'px',
     labelVisible: 1,
     callback: function(el){ //calculate the width of each element
-      return size(el)[0];
+      return el.offsetWidth;
     }
   });
 
   elCalcum({
-    selector: '.ex-multiple-calcum [class*="box"]',
+    selector: '.ex-multiple-calc [class*="box"]',
     label: 'height',
     units: 'px',
     labelVisible: 1,
 
 
     callback: function(el){ //calculate the height of each element
-      return size(el)[1];
+      return el.offsetWidth;
     }
   });
 
+
+  elCalcum({
+    selector: '.ex-multiple-calc',
+    label: 'container-width', //data-width
+    units: 'px',
+    labelVisible: 1,
+    callback: function(el){
+      return el.offsetWidth;
+    }
+  });
+
+  elCalcum({
+    selector: '.ex-multiple-calc',
+    label: 'container-height', //data-width
+    units: 'px',
+    labelVisible: 1,
+    callback: function(el){
+      return el.offsetHeight;
+    }
+  });
 
   //ex-ratios
 

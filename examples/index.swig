@@ -64,14 +64,25 @@
 
 <div class="marked">## Ex. 3: Multiple calcs on the same elements</div>
 
-<div class="marked">Simply run as many calculations on the elements. Each will generate it's own data attribute. You can them concatenate them in the css for one label: </div>
+<div class="marked">Simply run as many calculations on the elements. Each will generate it's own data attribute. You can then concatenate them in the css content for one label. Here's an example with flexbox wrapping : </div>
 
-<div class="ex-multiple-calcum">
-  <div class="box-4">flex 1</div>
-  <div class="box-5">flex 2</div>
-  <div class="box-7">flex 1</div>
+
+<div class="ex-multiple-calc">
+
+  <div class="box-1">1</div>
+  <div class="box-2">2</div>
+  <div class="box-3">3</div>
+  <div class="box-4">4</div>
+  <div class="box-5">5</div>
+  <div class="box-6">6</div>
+  <div class="box-7">7</div>
+  <div class="box-8">8</div>
+  <div class="box-9">9</div>
+  <div class="box-10">10</div>
+  <div class="box-11">11</div>
+  <div class="box-12">12</div>
+
 </div>
-
 
 <div class="marked">## Ex. 4: Ratios</div>
 
